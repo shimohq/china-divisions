@@ -15,7 +15,7 @@ const districtDataDir = "./district_data/dist/"
 // @description 中国行政区域查询，数据来源：https://github.com/modood/Administrative-divisions-of-China
 func main() {
 	r := setupRouter()
-	r.Run()
+	r.Run(":9001")
 }
 
 func setupRouter() *gin.Engine {
