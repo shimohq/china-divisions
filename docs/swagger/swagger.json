@@ -1,0 +1,47 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "description": "中国行政区域查询，数据来源：https://github.com/modood/Administrative-divisions-of-China",
+        "title": "🇨🇳中国行政区查询服务",
+        "contact": {},
+        "license": {},
+        "version": "1.0"
+    },
+    "host": "{{.Host}}",
+    "basePath": "{{.BasePath}}",
+    "paths": {
+        "/district": {
+            "get": {
+                "description": "最多能获取到区级别的联动信息",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "district"
+                ],
+                "summary": "如果不传入 code 或 code 无效，会根据 subdistrict 来返回所有的行政区数据；",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "行政区代码",
+                        "name": "code",
+                        "in": "query"
+                    },
+                    {
+                        "type": "integer",
+                        "default": 1,
+                        "description": "string default",
+                        "name": "subdistrict",
+                        "in": "query"
+                    }
+                ],
+                "responses": {
+                    "200": {}
+                }
+            }
+        }
+    }
+}

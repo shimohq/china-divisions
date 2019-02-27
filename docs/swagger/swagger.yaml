@@ -1,0 +1,32 @@
+basePath: '{{.BasePath}}'
+host: '{{.Host}}'
+info:
+  contact: {}
+  description: 中国行政区域查询，数据来源：https://github.com/modood/Administrative-divisions-of-China
+  license: {}
+  title: "\U0001F1E8\U0001F1F3中国行政区查询服务"
+  version: "1.0"
+paths:
+  /district:
+    get:
+      consumes:
+      - application/json
+      description: 最多能获取到区级别的联动信息
+      parameters:
+      - description: 行政区代码
+        in: query
+        name: code
+        type: string
+      - default: 1
+        description: string default
+        in: query
+        name: subdistrict
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200": {}
+      summary: 如果不传入 code 或 code 无效，会根据 subdistrict 来返回所有的行政区数据；
+      tags:
+      - district
+swagger: "2.0"
