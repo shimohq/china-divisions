@@ -66,6 +66,16 @@ func Get(c *gin.Context) {
 	if err != nil {
 		log.Panicln(err)
 	}
+	provinces = append(provinces, provinceModel{
+		Code: "81",
+		Name: "香港特别行政区",
+	}, provinceModel{
+		Code: "82",
+		Name: "澳门特别行政区",
+	}, provinceModel{
+		Code: "71",
+		Name: "台湾省",
+	})
 
 	message = provinces
 	provinceCode := string([]byte(code)[:2])
